@@ -6,6 +6,7 @@ import {ProjectBlockComponent} from './project-block/project-block.component';
 import {TodoCreatorComponent} from './todo-creator/todo-creator.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -26,6 +27,7 @@ import { AppComponent } from './app.component';
     MatIconModule,
     HttpClientModule,
     MatCheckboxModule,
+    MatCardModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

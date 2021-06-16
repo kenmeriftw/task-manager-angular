@@ -21,12 +21,8 @@ export class ProjectService {
 
   public addTodo(project_title: string, todo_text: string) {
   	let data_request = {
-  		project: {
-  			title: project_title,
-  		},
-  		todo: {
-  			text: todo_text,
-  		},
+  		project_title: project_title,
+  		text: todo_text
   	};
 
     this.http.post(this.create_todo, data_request).subscribe((data:any) => {
@@ -34,9 +30,9 @@ export class ProjectService {
     });
   }
 
-  public todoChangeState(project_id: number, todo_id: number, state: boolean) {
+  public todoChangeCompletion(project_id: number, todo_id: number, is_completed: boolean) {
     this.http.patch(this.domain + `/projects/${project_id}/todos/${todo_id}`, {
-      "state": state,
+      "is_completed": is_completed,
     }).subscribe((data:any) => {
       this.updateProjects();
     });

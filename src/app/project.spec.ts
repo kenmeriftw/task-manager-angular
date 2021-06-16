@@ -34,9 +34,9 @@ export class ProjectService {
     });
   }
 
-  public todoChangeState(project_id: number, todo_id: number, state: boolean) {
+  public todoChangeCompletion(project_id: number, todo_id: number, is_completed: boolean) {
     this.http.patch(this.domain + `/projects/${project_id}/todos/${todo_id}`, {
-      "state": state,
+      "is_completed": is_completed,
     }).subscribe((data:any) => {
       this.updateProjects();
     });

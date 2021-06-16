@@ -2,7 +2,7 @@
 
   <h2>{{project.title}}</h2>
   <div class="project-todos" *ngFor="let todo of project.todos">
-  	<mat-checkbox class="" [checked]="todo.is_completed" (change)="todoChangeState(project, todo, todo.is_completed = !todo.is_completed)"></mat-checkbox>
+  	<mat-checkbox class="" [checked]="todo.is_completed" (change)="todoChangeCompletion(project, todo, todo.is_completed = !todo.is_completed)"></mat-checkbox>
     <label [ngClass]="{'line-through': todo.is_completed === true}">{{todo.text}}</label>
   </div>
 

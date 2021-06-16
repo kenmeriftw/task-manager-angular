@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+list-style-type: none;
+}
+
+$background: #3aafda;
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+opacity: 0.03 !important;
+background-color: #00000000!important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+background-color: #00000000;
+}
+
+#app {
+  background: whitesmoke;
+  padding-top: 70px;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: scroll;
+}
+
+::ng-deep .mat-dialog-container {
+  background: #fff;
+}
+
+app-project-block {
+  padding: 0 30px;
+}
+
+mat-toolbar, mat-dialog-container {
+  background: $background;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+  bar .title {
+  text-align: 16pt;
+  margin: 0;
+}

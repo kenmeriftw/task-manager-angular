@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Project } from './project';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class ProjectService {
 
   constructor(private http: HttpClient) {}
 
-  private domain = "https://oblako-task-manager.herokuapp.com";
+  private domain = environment.apiUrl;
   private projects_url = this.domain + "/projects";
   private create_todo = this.domain + "/todos";
 

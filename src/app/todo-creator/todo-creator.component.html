@@ -3,11 +3,24 @@
 </div>
 
 <div>
-  <input type="text" [formControl]="todo" placeholder="Task Title">
+  <input type="text" [formControl]="todo" placeholder="Task Title" required>
+	<div *ngIf="todo.invalid && (todo.dirty || todo.touched)"
+    class="alert">
+		<div *ngIf="todo.errors?.required">
+			Todo text is required.
+		</div>
+	</div>
 </div>
 
 <div>
-	<input list="id-project" [formControl]="project" placeholder="Project Title">
+	<input list="id-project" [formControl]="project" placeholder="Project Title" required>
+	<div *ngIf="project.invalid && (project.dirty || project.touched)"
+    	class="alert">
+		<div *ngIf="project.errors?.required">
+			Project title is required.
+		</div>
+	</div>
+
 	<datalist id="id-project">
 	  <option *ngFor="let project of ProjectService.projects; trackBy: trackByProject">{{project.title}}</option>
 	</datalist>

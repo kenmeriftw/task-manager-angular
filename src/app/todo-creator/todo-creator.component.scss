@@ -47,6 +47,10 @@ button {
 	padding-top: 4px;
 }
 
+.ng-invalid:not(form)  {
+    border: 5px solid #a94442;
+  }
+
 button.button-save {
     background: #3aafda;
 } 

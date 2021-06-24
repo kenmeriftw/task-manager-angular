@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { ProjectService } from '../project.service';
 import { Project } from '../project';
 
@@ -11,8 +11,8 @@ import { Project } from '../project';
 })
 export class TodoCreatorComponent {
 
-  todo = new FormControl('');
-  project = new FormControl('');
+  todo = new FormControl('', [Validators.required, Validators.minLength(1)]);
+  project = new FormControl('', [Validators.required, Validators.minLength(1)]);
 
   constructor(public ProjectService: ProjectService) {}
 

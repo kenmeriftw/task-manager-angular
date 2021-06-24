@@ -9,10 +9,9 @@
 <div>
 	<input list="id-project" [formControl]="project" placeholder="Project Title">
 	<datalist id="id-project">
-	  <option *ngFor="let project of ProjectService.projects">{{project.title}}</option>
+	  <option *ngFor="let project of ProjectService.projects; trackBy: trackByProject">{{project.title}}</option>
 	</datalist>
 </div>
-
 
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>

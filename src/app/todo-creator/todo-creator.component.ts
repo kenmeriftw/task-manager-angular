@@ -24,4 +24,8 @@ export class TodoCreatorComponent {
   	this.ProjectService.addTodo(this.project.value, this.todo.value);
   }
 
+  trackByProject(index: number, project: Project): number {
+    return project.id;
+  }
+
 }

@@ -16,6 +16,13 @@ export class ProjectBlockComponent implements OnInit {
     this.ProjectService.updateProjects();
   }
 
+  todoChangeCompletion(project: Project, todo: Todo, is_completed: boolean) {
+    let project_id = project.id;
+    let todo_id = todo.id;
+
+    this.ProjectService.todoChangeCompletion(project_id, todo_id, is_completed);
+  }
+
   trackByProject(index: number, project: Project): number {
     return project.id;
   }

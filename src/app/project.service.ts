@@ -17,7 +17,14 @@ export class ProjectService {
   projects: Project[] = [];
 
   public updateProjects() {
-    this.http.get(this.projects_url).subscribe((data:any) => this.projects=data);
+    this.http.get(this.projects_url).subscribe((data:any) => {
+      this.projects=data;
+    },
+    error => {
+      alert('Error loading data');
+      console.log(error);
+    }
+    );
   }
 
   public addTodo(project_title: string, todo_text: string) {
@@ -28,7 +35,12 @@ export class ProjectService {
 
     this.http.post(this.create_todo, data_request).subscribe((data:any) => {
       this.updateProjects();
-    });
+    },
+    error => {
+      alert('Error adding data');
+      console.log(error);
+    }
+    );
   }
 
   public todoChangeCompletion(project_id: number, todo_id: number, is_completed: boolean) {
@@ -36,6 +48,11 @@ export class ProjectService {
       "is_completed": is_completed,
     }).subscribe((data:any) => {
       this.updateProjects();
-    });
+    },
+    error => {
+      alert('Error updating data');
+      console.log(error);
+    }
+    );
   }
 }
